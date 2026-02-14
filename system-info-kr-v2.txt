@@ -1,0 +1,12 @@
+=== 시스템 정보 리포트 ===
+생성 시간: 2026-02-15 00:42:32
+PowerShell 버전: 7.5.4
+
+OS 버전: Microsoft Windows 11 Pro (빌드 26200)
+PowerShell: PowerShell Core 7.5.4
+Git: git version 2.50.1.windows.1
+현재 디렉터리: C:\claude-lab\cc-playground
+디스크 공간 (C:): 17.6 GB 남음 / 237.62 GB (사용률: 92.6%)
+출력 인코딩: Korean (코드페이지: 949)
+
+=== 리포트 끝 ===
