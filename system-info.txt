@@ -1,0 +1,10 @@
+﻿=== System Information Report ===
+Generated: 2026-02-15 00:30:56
+
+OS Version: Microsoft Windows 11 Pro (Build 26200)
+PowerShell Version: 5.1.26100.7705
+Git: git version 2.50.1.windows.1
+Current Directory: C:\claude-lab\cc-playground
+Disk Space (C:): 17.6 GB free of 237.62 GB
+
+=== End of Report ===
