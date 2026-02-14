@@ -42,6 +42,24 @@
 - **Best Practice**: If encoding errors occur repeatedly, check tool version and switch to better alternative (e.g., pwsh instead of powershell.exe)
 
 ## Safety / Guardrails
-- Do not fabricate results or data. If real data isn’t available, say so.
+- Do not fabricate results or data. If real data isn't available, say so.
 - Do not run destructive commands (rm -rf, format, registry edits) unless explicitly asked and explained.
+
+## Continuous Improvement
+- **After completing a coding task**, reflect on the work and identify lessons learned.
+- **Update this CLAUDE.md** if you discover:
+  - Better practices or patterns that should be standard
+  - Common pitfalls that can be avoided
+  - Environmental issues or tool-specific behaviors
+  - Workflow improvements that increase quality or efficiency
+- **What to capture**:
+  - Concrete, actionable rules (not vague principles)
+  - Context-specific guidelines (Windows, encoding, tool versions, etc.)
+  - Solutions to problems that might recur
+- **What NOT to capture**:
+  - One-off issues unlikely to repeat
+  - Project-specific business logic
+  - Temporary workarounds
+- **Format**: Keep rules concise, organized by section, with examples when helpful.
+- **Commit**: Update CLAUDE.md as a separate commit with clear explanation of the improvement.
 
