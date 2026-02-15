@@ -13,3 +13,5 @@ description: "최근 변경사항을 짧고 안전하게 리뷰할 때 사용(�
 - 가능하면 git diff --name-only, git diff --check 기반으로 판단.
 - 명령 제안은 PowerShell 우선.
 
+가능하면 참고: references/commands.md (안전한 리뷰 명령)
+

@@ -18,3 +18,5 @@ description: "요구사항을 1페이지 PRD로 정리할 때 사용. 목표/비
 6) Plan (<= 6줄)
 7) Risks / Open Questions (bullets)
 
+필요하면 참고: references/examples.md (Goal/Acceptance Criteria 예시)
+

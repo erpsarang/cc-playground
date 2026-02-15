@@ -19,3 +19,5 @@ description: "에러/버그 재현을 위해 MRE(최소 재현 예제) + 증거 
 절대 규칙:
 - 증거 없이 추측하지 말 것.
 
+필요하면 참고: references/checklist.md (Windows 재현/확인 체크리스트)
+
