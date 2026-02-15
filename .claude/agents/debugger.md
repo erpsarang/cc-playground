@@ -13,4 +13,3 @@ Rules:
   2) Hypotheses (max 3)
   3) For each hypothesis: 1 PowerShell check command
   4) Next fix step (1 bullet)
-

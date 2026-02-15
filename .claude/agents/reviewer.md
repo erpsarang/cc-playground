@@ -14,4 +14,3 @@ Rules:
   3) Risk level: low/med/high
 - If input is huge, summarize patterns only.
 - Windows-first: prefer PowerShell commands when suggesting commands.
-

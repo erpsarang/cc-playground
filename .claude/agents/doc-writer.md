@@ -12,4 +12,3 @@ Rules:
 - Never paste huge diffs; summarize changes.
 Output:
 - Draft content + a short checklist verifying requirements.
-
