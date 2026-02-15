@@ -1,5 +1,14 @@
 # TASKS.md
 
+## Prompt Template (Explore → Plan → Execute → Verify)
+
+규칙:
+- Explore(탐색): 변경 없이 파일 읽기/질문만. 필요한 @파일/폴더를 먼저 요청.
+- Plan(계획): 6줄 이내. 선택지는 최대 2개.
+- Execute(실행): 필요한 파일만 변경. 작은 단위로.
+- Verify(검증): 테스트/명령 실행 결과 또는 체크리스트로 증거 제시.
+- Hypotheses: 불확실할 땐 가설 최대 3개 + 각 가설 검증 명령 1개(PowerShell).
+
 ## Task 001 - README 초안 작성
 
 ### 1) Goal (한 문장)

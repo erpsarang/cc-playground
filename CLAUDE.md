@@ -28,6 +28,7 @@
    - **Stop and analyze the root cause** (don't "patch spiral")
    - Re-plan with a different approach if needed
    - Document the solution if it reveals an environmental issue
+6) Use Explore → Plan → Execute → Verify. Limit hypotheses to 3, options to 2, and require verification evidence.
 
 ## Output Style
 - Use short sections and concrete steps.
