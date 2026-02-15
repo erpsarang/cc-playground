@@ -12,3 +12,5 @@
 - Do not assume installations. Check with version commands first.
 - Avoid destructive operations unless explicitly requested.
 - Never provide bash-only steps; always include PowerShell equivalents on Windows.
+- Prefer @directory for structure first, then @file for only the needed files.
+
