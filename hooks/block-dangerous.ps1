@@ -4,8 +4,8 @@
 try {
   $inputJson = [Console]::In.ReadToEnd() | ConvertFrom-Json
 } catch {
-  # stdin 파싱 실패 시 허용
-  Write-Output '{"decision":"allow"}'
+  # stdin 파싱 실패 시 차단 (fail-closed)
+  Write-Output '{"decision":"block","message":"Hook input parsing failed; blocking for safety."}'
   exit 0
 }
 
