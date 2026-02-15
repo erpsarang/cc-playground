@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File hooks/block-dangerous.ps1"
+            "command": "pwsh -ExecutionPolicy Bypass -File hooks/block-dangerous.ps1"
           }
         ]
       }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File hooks/quality-gate.ps1"
+            "command": "pwsh -ExecutionPolicy Bypass -File hooks/quality-gate.ps1"
           }
         ]
       }

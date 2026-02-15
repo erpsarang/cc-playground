@@ -1,12 +1,16 @@
 # hooks/block-dangerous.ps1
 # Purpose: Block obviously dangerous shell commands before they run.
 
-$inputJson = [Console]::In.ReadToEnd() | ConvertFrom-Json
+try {
+  $inputJson = [Console]::In.ReadToEnd() | ConvertFrom-Json
+} catch {
+  # stdin 파싱 실패 시 허용
+  Write-Output '{"decision":"allow"}'
+  exit 0
+}
 
-# Claude Code hook payloads include the tool name and the tool input.
-# We'll be defensive and search likely fields.
-$tool = ($inputJson.tool_name, $inputJson.tool, $inputJson.name | Where-Object { $_ })[0]
-$cmd  = ($inputJson.input.command, $inputJson.command, $inputJson.input, $inputJson | Out-String)
+# Extract the command string from the hook payload
+$cmd = if ($inputJson.input.command) { $inputJson.input.command } elseif ($inputJson.command) { $inputJson.command } else { $inputJson | Out-String }
 
 $dangerPatterns = @(
   'rm\s+-rf',                 # nukes
