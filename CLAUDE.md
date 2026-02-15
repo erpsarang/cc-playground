@@ -29,6 +29,7 @@
    - Re-plan with a different approach if needed
    - Document the solution if it reveals an environmental issue
 6) Use Explore → Plan → Execute → Verify. Limit hypotheses to 3, options to 2, and require verification evidence.
+7) Long outputs (logs/diffs/reviews) must be handled by a subagent and summarized within 12 lines.
 
 ## Output Style
 - Use short sections and concrete steps.
@@ -78,3 +79,9 @@ When you (Claude) make a mistake or I correct you:
    - TOOLS.md (tooling constraint), USER.md (preference), SOUL.md (tone)
 4) Keep the added text minimal (1–3 lines).
 5) Never change multiple policy files for a single correction.
+
+## Subagent Routing
+- If task mentions errors/logs/failing tests -> use subagent: debugger
+- If task mentions review/security/diff/quality -> use subagent: reviewer
+- If task mentions README/docs/guide/summary -> use subagent: doc-writer
+- Subagents must return <= 12–14 lines and avoid long logs/diffs.
