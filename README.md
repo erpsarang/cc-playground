@@ -1,57 +1,54 @@
 # cc-playground
 
-Claude Code 워크플로를 Windows에서 연습하는 샌드박스 저장소.
+Windows에서 Claude Code 워크플로를 실험하는 샌드박스.
 
-## 목적
+## 핵심 원칙
 
-- **챕터 방식** 진행: 챕터 완료 → 확인 → 다음.
-- 각 챕터는 `TASKS.md`의 Task로 관리.
-- 우선순위: **정확성 > 명확성 > 속도**.
+**정확성 > 명확성 > 속도** — 챕터 단위로 진행하며, 과제는 `TASKS.md`로 관리한다.
 
-## 파일 구조
+## 구조
 
-| 파일 | 역할 |
-|------|------|
-| `CLAUDE.md` | 프로젝트 규칙 (헌법) |
-| `SOUL.md` | AI 페르소나 및 톤 |
-| `USER.md` | 사용자 선호 설정 |
-| `TOOLS.md` | 사용 가능한 도구/제약 |
-| `AGENTS.md` | AI 역할 정의 |
-| `KNOWLEDGE.md` | 프로젝트 결정 사항 기록 |
-| `TASKS.md` | 연습 과제 목록 |
-| `*.ps1` | PowerShell 연습 스크립트 |
+```
+CLAUDE.md        ← 규칙 (헌법)
+SOUL.md          ← AI 톤·페르소나
+USER.md          ← 사용자 선호
+TOOLS.md         ← 도구 제약
+AGENTS.md        ← AI 역할
+KNOWLEDGE.md     ← 결정 기록
+TASKS.md         ← 과제 목록
+hooks/
+  block-dangerous.ps1   ← PreToolUse 훅: 위험 명령 차단
+  quality-gate.ps1      ← Stop 훅: 품질 검증
+*.ps1            ← 연습 스크립트
+```
 
-## 시작하기
-
-설치 여부를 가정하지 않는다. 먼저 확인 후 클론:
+## 시작
 
 ```powershell
 git --version
-pwsh --version          # PowerShell 7 우선 사용 (UTF-8 기본 지원)
+pwsh --version          # PowerShell 7 권장 (UTF-8 기본)
 git clone <저장소-URL>
 cd cc-playground
 ```
 
-규칙: `CLAUDE.md` / 과제: `TASKS.md` 참고.
+## Hooks
+
+Claude Code가 도구를 호출할 때 자동 실행되는 안전장치.
+
+| 훅 | 시점 | 역할 |
+|---|---|---|
+| `block-dangerous.ps1` | PreToolUse (Bash) | `rm -rf`, `curl`, `git push` 등 위험 패턴 차단 |
+| `quality-gate.ps1` | Stop | git diff check, 테스트, 컴파일 검증 |
 
 ## 실행 예시
 
-**PowerShell**: 시스템 정보 수집
-
 ```powershell
+# 시스템 정보
 pwsh -File .\Get-SystemInfo.ps1
-pwsh -File .\Get-SystemInfo-KR-v2.ps1
-```
 
-**PowerShell**: 파일 구조 및 키워드 검색
+# 파일 구조 확인
+Get-ChildItem *.md, *.ps1 | Format-Table Name, Length, LastWriteTime
 
-```powershell
-Get-ChildItem -Path *.md, *.ps1 | Format-Table Name, Length, LastWriteTime
-Select-String -Path *.md -Pattern "UTF-8"
-```
-
-**Bash**: Git 상태 확인
-
-```bash
+# Git 상태
 git status && git log --oneline -5
 ```
