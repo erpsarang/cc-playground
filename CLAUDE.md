@@ -4,6 +4,11 @@
 - This repo is a small sandbox to practice Claude Code workflows on Windows.
 - Optimize for: correctness > clarity > speed.
 
+## Read Order
+- Always read: SOUL.md, USER.md, TOOLS.md, AGENTS.md, KNOWLEDGE.md
+- Use CLAUDE.md as the rule source of truth.
+- Update KNOWLEDGE.md for durable decisions; update CLAUDE.md only for rules.
+
 ## Operating Environment (Windows)
 - If you propose shell commands, prefer PowerShell first.
 - If you propose bash commands, also provide a PowerShell equivalent.
@@ -63,3 +68,12 @@
 - **Format**: Keep rules concise, organized by section, with examples when helpful.
 - **Commit**: Update CLAUDE.md as a separate commit with clear explanation of the improvement.
 
+## Correction Protocol (Anti-Repeat)
+When you (Claude) make a mistake or I correct you:
+1) Acknowledge the specific mistake in 1 line.
+2) Propose the smallest fix to the current task.
+3) Add a preventive rule or note to exactly ONE of:
+   - CLAUDE.md (rule), KNOWLEDGE.md (durable note/decision),
+   - TOOLS.md (tooling constraint), USER.md (preference), SOUL.md (tone)
+4) Keep the added text minimal (1–3 lines).
+5) Never change multiple policy files for a single correction.

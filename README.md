@@ -53,6 +53,41 @@ pwsh -File .\Get-SystemInfo.ps1
 pwsh -File .\Get-SystemInfo-KR-v2.ps1
 ```
 
+## 실행 예시 (Bash)
+
+**예시 1**: Git 상태 및 최근 커밋 확인
+
+```bash
+git status && git log --oneline -5
+```
+
+```powershell
+# PowerShell 동등
+git status; git log --oneline -5
+```
+
+**예시 2**: 프로젝트 파일 구조 확인
+
+```bash
+ls -la *.md *.ps1
+```
+
+```powershell
+# PowerShell 동등
+Get-ChildItem -Path *.md, *.ps1 | Format-Table Name, Length, LastWriteTime
+```
+
+**예시 3**: 특정 키워드로 프로젝트 파일 검색
+
+```bash
+grep -rn "UTF-8" *.md
+```
+
+```powershell
+# PowerShell 동등
+Select-String -Path *.md -Pattern "UTF-8"
+```
+
 ## 참고
 
 - PowerShell 7(`pwsh`)을 우선 사용한다. UTF-8 기본 지원으로 한국어 처리에 유리하다.
