@@ -18,9 +18,9 @@ $dangerPatterns = @(
   'rmdir\s+/s',               # windows recursive delete
   'format\s+',                # format disk
   'reg\s+add|reg\s+delete',   # registry edits
-  'curl\s+|wget\s+',          # network exfil / downloads
+  'curl\s+.*\||wget\s+.*\|',  # piped downloads only (exfil risk)
   'ssh\s+|scp\s+',            # remote access
-  'git\s+push',               # publish code
+  'git\s+push\s+.*--force|git\s+push\s+-f',  # force push only
   '\.env|secrets|id_rsa'      # sensitive files
 )
 
